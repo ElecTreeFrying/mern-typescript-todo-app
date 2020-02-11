@@ -18,5 +18,8 @@ const connection = mongoose_1.default.connection;
 connection.once('open', () => {
     console.log("\nMongoDB database connection established successfully\n");
 });
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
 app.listen(port, () => console.log(`\nListening on port ${port}!`));
 //# sourceMappingURL=app.js.map
