@@ -1,12 +1,11 @@
 import express from 'express';
+import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';
-
-const app = express();
-const port = process.env.PORT || 3000;
 
 dotenv.config();
+const app = express();
+const port = +process.env.PORT || 8082;
 
 app.use(cors());
 app.use(express.json());
@@ -16,12 +15,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedT
 
 const connection = mongoose.connection;
 connection.once('open', () => {
-  console.log("\nMongoDB database connection established successfully");
-})
+  console.log("\nMongoDB database connection established successfully\n");
+});
 
-
-app.get('/', (req, res) => () => { })
-
-app.listen(port, () => {
-  console.log(`\nListening on port ${port}!`)
-})
+app.listen(port, () => console.log(`\nListening on port ${port}!`))
