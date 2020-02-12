@@ -7,8 +7,10 @@
     "build": "tsc",
     "prestart": "npm run build",
     "client": "cd .. & npm run start",
-    "server": "ts-node-dev app.ts",
+    "server": "tsnd src/app.ts",
+    "server-all": "concurrently -c 'green,red,magenta' \"tsnd src/app.ts\" \"tsnd src/models/todo.model.ts\" \"tsnd src/routes/todo.ts\" ",
     "dev": "concurrently \"npm run server\" \"npm run prebuild\" \"npm run build\" \"npm run client\" \"cd server\" ",
+    "dev2": "concurrently \"npm run server-all\" \"npm run prebuild\" \"npm run build\" \"npm run client\" \"cd server\" ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

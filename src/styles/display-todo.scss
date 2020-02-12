@@ -1,0 +1,17 @@
+
+.list-group-item {
+  margin-bottom: -34px;
+}
+
+a.xdisabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-container {
+  transform: translate(-8px, -12px);
+
+  .btn {
+    margin-left: 8px;
+  }
+}

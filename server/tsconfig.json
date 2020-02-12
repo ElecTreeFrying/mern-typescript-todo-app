@@ -10,6 +10,7 @@
     "esModuleInterop": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
     "outDir": "dist",
     "baseUrl": "src",
     "moduleResolution": "node",
@@ -20,10 +21,9 @@
     }
   },
   "include": [
-    "src/**/*.ts",
-    "**/**/*",
-    "**/*",
-    "app.ts"
+    "src/models",
+    "src/routes",
+    "src/*"
   ],
   "exclude": [
     "node_modules"
